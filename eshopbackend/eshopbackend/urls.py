@@ -24,6 +24,8 @@ from django.urls import path,include
 from django.contrib.auth.models import User
 from rest_framework import routers, serializers, viewsets
 
+# from eshopbackend import customer
+
 # Serializers define the API representation.
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
@@ -44,5 +46,6 @@ router.register(r'users', UserViewSet)
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(router.urls)),
+    path('customer/', include('customer.urls')),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]

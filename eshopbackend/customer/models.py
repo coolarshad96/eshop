@@ -10,7 +10,7 @@ class Customer(models.Model):
     phone=models.CharField(max_length=15,blank=True,null=True)
 
     def __str__(self):
-        return self.name
+        return str(self.pk)+"-"+self.name
     
     
 class Address(models.Model):
